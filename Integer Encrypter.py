@@ -1,16 +1,27 @@
 def encrint(integer):
   integer_ = hex(int(integer))
+  print(integer_)
   integer = []
-  for i in range(len(integer_)):
-    if len(integer_) >= 2*(i+1)+1:
+  print((len(integer_)-2+(2*(len(integer_) % 2))) // 2)
+  for i in range((len(integer_)-2+(2*(len(integer_) % 2))) // 2):
+      print(i)
       try:
         
-        integer.append('0x' + integer_[2*(i+1)] + integer_[2*(i+1)+1])
+        integer.append(int('0x' + integer_[len(integer_)-(2*(i))-2] + integer_[len(integer_)-(2*(i))-1], 0))
+        print('0x' + integer_[len(integer_)-(2*(i))-2] + integer_[len(integer_)-(2*(i))-1])
       except: 
-          integer.append('0x' + '0' + integer_[2*(i+1)])
+          integer.append(int('0x' + integer_[2], 0))
+          print('0x' + integer_[2])
+  print(integer)
   integers = []
+  for i in range(len(integer)):
+    integers.append(integer[len(integer)-i-1])
+  integer = integers
+  integers = []
+  print(integer)
+
   for i in integer:
-    i = int(i, 0)
+    print(i)
     integers.append(chr(i))
   integer = ''.join([str(t) for t in integers])
   return integer
