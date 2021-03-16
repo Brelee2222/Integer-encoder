@@ -18,4 +18,5 @@ def decrint(string):
   value = '0x'
   for i in range(len(string)):
       value = value + str(hex(ord(string[i]))).replace('0x', '')
-  return string
+  value = int(value, 0)
+  return value
