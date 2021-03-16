@@ -4,7 +4,7 @@ def encrint(integer):
   for i in range(len(integer_)):
     if len(integer_) >= 2*(i+1)+1:
       try:
-        print(integer_[2*(i+1)], integer_[2*(i+1)+1])
+        
         integer.append('0x' + integer_[2*(i+1)] + integer_[2*(i+1)+1])
       except: 
           integer.append('0x' + '0' + integer_[2*(i+1)])
